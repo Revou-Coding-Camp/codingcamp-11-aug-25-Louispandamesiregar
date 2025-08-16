@@ -1,29 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!--link css-->
-    <link rel="stylesheet" href="css/style.css">
-    <!--Tailwind CSS-->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Company Profile</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Simple transition for smooth scroll and other effects */
+        .smooth-transition {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
 </head>
-<body>
-    <!--header
-    -->
-    <header>
+<body class="bg-gray-50 font-sans">
 
-    </header> 
+    <!-- Header & Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="rounded-full h-[50px] w-[50px] bg-[url(RevoU.png)] bg-contain"></div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-indigo-600 smooth-transition">Home</a>
+                <a href="#profile" class="text-gray-600 hover:text-indigo-600 smooth-transition">My Portfolio</a>
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 smooth-transition">About</a>
+                <a href="#message-us" class="text-gray-600 hover:text-indigo-600 smooth-transition">Message Us</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#home" class="block py-2 text-gray-600 hover:text-indigo-600">Home</a>
+            <a href="#profile" class="block py-2 text-gray-600 hover:text-indigo-600">My Portfolio</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-indigo-600">About</a>
+            <a href="#message-us" class="block py-2 text-gray-600 hover:text-indigo-600">Message Us</a>
+        </div>
+    </header>
 
     <main>
+        <!-- Home Section (Photo Banner) -->
+        <section id="home" class="relative h-[60vh] md:h-[80vh] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <h1 id="welcome-message" class="text-3xl md:text-5xl font-bold text-white text-center px-4"></h1>
+            </div>
+        </section>
 
+        <!-- My Portfolio Section -->
+        <section id="profile" class="py-20 bg-gradient-to-b from-white to-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Profile</h2>
+                
+                <!-- Profile Info Grid -->
+                <div class="grid md:grid-cols-3 gap-10 items-center mb-16">
+                    <!-- Profile Picture & Socials -->
+                    <div class="md:col-span-1 flex flex-col items-center text-center">
+                        <img src="poto_profil.jpg" alt="Foto Profil Louis Pandame Siregar" class="w-48 h-48 rounded-full object-cover shadow-lg mb-4">
+                        <h3 class="text-2xl font-bold text-gray-800">Louis Pandame Siregar</h3>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="https://github.com/Louispandamesiregar" target="_blank" class="text-gray-600 hover:text-indigo-600 text-2xl smooth-transition"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/louis-pandame-50097826a" target="_blank" class="text-gray-600 hover:text-indigo-600 text-2xl smooth-transition"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <!-- About Me & Skills -->
+                    <div class="md:col-span-2">
+                        <h4 class="text-2xl font-semibold text-gray-800 mb-3">About Me</h4>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Mahasiswa semester 4 dari Universitas Pelita Bangsa dengan jurusan Teknik Informatika. Umur saya 23 tahun, hobi saya adalah membaca buku dan berenang. Saya juga suka mengisi waktu luang dengan belajar.
+                        </p>
+                        <h4 class="text-2xl font-semibold text-gray-800 mb-4">My Skills</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">CSS</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-4 py-2 rounded-full">JavaScript</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">UI/UX Design</span>
+                            <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Prompting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <h3 class="text-3xl font-bold text-center mb-10 text-gray-800">My Projects</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 smooth-transition">
+                        <img src="blog_artikel.png" alt="Proyek Blog Artikel" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Blog Artikel</h4>
+                            <p class="text-gray-600">Website blog yang berisikan tentang pembahasan dunia pemasaran dalam sudut pandang kristen protestan.</p>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 smooth-transition">
+                        <img src="capstone_project.png" alt="Proyek Capstone" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Capstone Project</h4>
+                            <p class="text-gray-600">Mini Course yang membahas dan menerapkan AI dalam pembuatan sebuah website.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Vision Mission Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">About The Company</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Kami adalah mitra teknologi inovatif yang berdedikasi untuk membantu bisnis bertransformasi di era digital. Dengan tim ahli yang bersemangat, kami merancang dan mengembangkan solusi digital custom, mulai dari website modern, aplikasi mobile, hingga sistem manajemen yang efisien. Kami percaya bahwa teknologi terbaik lahir dari kolaborasi, oleh karena itu kami bekerja sama dengan setiap klien untuk memahami tujuan mereka dan menghadirkan produk yang tidak hanya fungsional, tetapi juga memberikan dampak nyata.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">Vision & Mission</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        <strong>Visi:</strong> Menjadi pelopor transformasi digital yang memberdayakan bisnis untuk masa depan yang lebih cerdas dan efisien.
+                        <br><br>
+                        <strong>Misi:</strong>
+                        <ul class="list-disc list-inside mt-2 space-y-2">
+                            <li>Menghadirkan solusi teknologi inovatif yang disesuaikan dengan kebutuhan unik setiap klien.</li>
+                            <li>Membangun kemitraan jangka panjang yang didasari kepercayaan dan keberhasilan bersama.</li>
+                            <li>Mendorong pertumbuhan talenta digital melalui budaya kerja yang kolaboratif dan terus belajar.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Message Us Section (Form) -->
+        <section id="message-us" class="py-20 bg-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
+                <!-- Form -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Message Us</h2>
+                    <form id="contact-form" novalidate>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                            <p class="text-red-500 text-sm mt-1 hidden" id="name-error">Name is required.</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                             <p class="text-red-500 text-sm mt-1 hidden" id="email-error">Please enter a valid email.</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                            <p class="text-red-500 text-sm mt-1 hidden" id="phone-error">Please enter a valid phone number.</p>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
+                            <p class="text-red-500 text-sm mt-1 hidden" id="message-error">Message cannot be empty.</p>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white py-3 px-6 rounded-lg smooth-transition font-semibold">Submit</button>
+                    </form>
+                </div>
+                <!-- Submitted Data Display -->
+                <div id="submitted-data-container" class="bg-gray-100 p-8 rounded-lg hidden">
+                     <h3 class="text-2xl font-bold mb-4 text-gray-800">Submitted Information</h3>
+                     <div id="submitted-data" class="space-y-3 text-gray-700">
+                        <!-- Data will be injected here by JavaScript -->
+                     </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 MyCompany. All Rights Reserved.</p>
+        </div>
     </footer>
-    <!--JS External-->
-    <script src="js/script.js"></script>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/scripct.js" defer></script>
 </body>
 </html>
